@@ -1,0 +1,14 @@
+name: Detection rule request
+description: Suggest a new lockfile red flag lockgate should catch
+labels: [rule-request]
+body:
+  - type: textarea
+    id: pattern
+    attributes: { label: What should be flagged, description: Describe the lockfile change and why it is risky. Links to incident write-ups help. }
+    validations: { required: true }
+  - type: dropdown
+    id: sev
+    attributes: { label: Suggested severity, options: [critical, high, medium, low, info] }
+  - type: textarea
+    id: fp
+    attributes: { label: Possible false positives }

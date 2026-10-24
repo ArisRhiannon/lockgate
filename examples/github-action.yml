@@ -1,0 +1,21 @@
+# .github/workflows/lockgate.yml - review lockfile changes on every pull request
+name: lockgate
+on:
+  pull_request:
+    paths: ['**/package-lock.json']
+permissions:
+  contents: read
+  security-events: write   # only needed for the SARIF upload
+jobs:
+  lockgate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0, persist-credentials: false }
+      - uses: ArisRhiannon/lockgate@v0.1.0
+        with:
+          fail-on: high
+          sarif: 'true'
+      - uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with: { sarif_file: lockgate.sarif }

@@ -1,0 +1,21 @@
+name: Bug report
+description: lockgate reported something wrong, missed something, or crashed
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes: { label: lockgate version, placeholder: 'lockgate --version' }
+    validations: { required: true }
+  - type: input
+    id: node
+    attributes: { label: Node.js and npm versions }
+  - type: textarea
+    id: what
+    attributes: { label: What happened, description: Command you ran and the output. Please redact private registry URLs. }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: What you expected }
+  - type: textarea
+    id: lock
+    attributes: { label: Minimal lockfile excerpt, render: json }

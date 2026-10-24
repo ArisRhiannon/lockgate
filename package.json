@@ -1,0 +1,16 @@
+{
+  "name": "lockgate",
+  "version": "0.1.0",
+  "description": "Offline npm lockfile diff gate for pull requests: flags changed integrity hashes, git/tarball sources, new install scripts and other supply-chain red flags in package-lock.json changes. Zero dependencies, SARIF output.",
+  "bin": { "lockgate": "bin/lockgate.js" },
+  "main": "src/index.js",
+  "files": ["bin", "src", "action.yml"],
+  "scripts": { "test": "node --test test/analyze.test.js test/cli.test.js" },
+  "engines": { "node": ">=18" },
+  "keywords": ["npm", "package-lock", "lockfile", "lockfile-lint", "supply-chain-security", "software-supply-chain", "dependency-review", "pull-request", "ci", "github-actions", "sarif", "shai-hulud", "npm-worm", "install-scripts", "integrity", "security", "offline", "devsecops"],
+  "author": "Aris Rhiannon (https://github.com/ArisRhiannon)",
+  "license": "MIT",
+  "homepage": "https://github.com/ArisRhiannon/lockgate#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/ArisRhiannon/lockgate.git" },
+  "bugs": { "url": "https://github.com/ArisRhiannon/lockgate/issues" }
+}
